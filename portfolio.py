@@ -1,7 +1,7 @@
 import streamlit as st
 
 # --- CONFIGURATION GLOBALE ---
-st.set_page_config(page_title="Portfolio - Ingénieur Logiciel", layout="wide")
+st.set_page_config(page_title="Portfolio - Étudiant en Génie Logiciel", layout="wide")
 
 # --- MENU LATERAL ---
 pages = ["🏠 Accueil", "👨‍💻 Profil Technique", "🛠️ Stack & Compétences", "📊 Réalisations", "📬 Contact", "📄 Télécharger mon CV"]
@@ -11,8 +11,7 @@ choice = st.sidebar.radio("Navigation", pages)
 if choice == "🏠 Accueil":
     st.title("🚀 Portfolio - Ingénieur en Génie Logiciel")
     st.write("""
-    Développeur **Full-Stack** (Django, PHP) et Data Engineer débutant,  
-    avec une expertise en **Business Intelligence** et en **Linux Systems**.
+    Étudiant en Génie Logiciel | Développeur Full-Stack | Junior Data Engineer
     """)
 
 elif choice == "👨‍💻 Profil Technique":
@@ -24,35 +23,62 @@ elif choice == "👨‍💻 Profil Technique":
     """)
 
 elif choice == "🛠️ Stack & Compétences":
-    st.header("Stack & Compétences")
+    st.header("🛠️ Stack & Compétences")
+
     st.subheader("Langages de programmation")
-    st.write("Python | PHP | JavaScript | SQL")
+    st.write("Python | PHP | JavaScript")
 
-    st.subheader("Frameworks & Outils")
-    st.write("Django | Streamlit | Flask | Bootstrap")
+    st.subheader("Bases de données & Requêtes")
+    st.write("SQL (MySQL, PostgreSQL, SQLite)")
 
-    st.subheader("Data & IA")
-    st.write("Pandas | Scikit-learn | Prophet | Visualisation (Matplotlib, Seaborn)")
+    st.subheader("Frameworks & Bibliothèques")
+    st.write("Django | Flask | Streamlit | Bootstrap")
+
+    st.subheader("Data Science & IA")
+    st.write("Pandas | NumPy | Scikit-learn | Prophet | Visualisation (Matplotlib, Seaborn)")
 
     st.subheader("DevOps & Systèmes")
-    st.write("Linux (Ubuntu, Kali) | Docker | Git | CI/CD")
+    st.write("Linux (Ubuntu, Kali) | Docker | Git/GitHub | CI/CD")
+
 
 elif choice == "📊 Réalisations":
     st.header("Réalisations (Projects)")
 
-    # Projet 1 - Django / PHP
-    st.subheader("🌐 Plateforme Web (Django / PHP)")
+        # Projet 3 - Système de Réservation pour Clinique Vétérinaire
+    st.subheader("🐾 Système de Réservation en Ligne - Clinique Vétérinaire")
     st.write("""
-    Développement d’une application web robuste avec :
-    - Authentification sécurisée (OAuth2 Google/Facebook)
-    - Gestion utilisateurs et base de données relationnelle
-    - Déploiement sur serveur Linux
+    Application web complète permettant aux clients de :
+    - Créer un compte personnel sécurisé.
+    - Enregistrer leurs animaux (nom, espèce, race, date de naissance).
+    - Prendre rendez-vous en ligne (consultations, vaccinations, etc.).
+    - Consulter l’historique de leurs rendez-vous.
+    - Télécharger le dossier médical de leur animal au format PDF.
+    - Gérer leurs demandes (annulation, modification).
+
+    **Interface d’administration pour le personnel vétérinaire :**
+    - Valider ou refuser les rendez-vous.
+    - Consulter toutes les fiches animales.
+    - Filtrer les RDV par statut, date ou utilisateur.
+    - Gérer les comptes utilisateurs.
     """)
 
-    if st.button("Voir captures - Django / PHP"):
-        st.image("assets/django_project1.png", caption="Page login", use_column_width=True)
-        st.image("assets/django_project2.png", caption="Dashboard admin", use_column_width=True)
+    st.markdown("**Technologies utilisées :**")
+    st.write("""
+    - **Langage** : Python 3.12  
+    - **Framework** : Django 5.2  
+    - **Base de données** : SQLite (développement) → PostgreSQL (production future)  
+    - **Frontend** : HTML / CSS / Bootstrap 5 (design responsive)  
+    - **Authentification** : django-allauth (locale + Google)  
+    - **PDF** : WeasyPrint (génération de dossiers médicaux)  
+    - **DevOps** : Git / GitHub (gestion de version)  
+    """)
 
+
+    if st.button("Voir captures - Réservation Vétérinaire"):
+         st.video("assets/vedio_vet.mp4", format="video/mp4", start_time=0)
+
+
+  
     # Projet 2 - PharmaInsight
     st.subheader("💊 PharmaInsight (Streamlit + Python)")
     st.write("""
@@ -64,14 +90,18 @@ elif choice == "📊 Réalisations":
     """)
 
     if st.button("Voir captures - PharmaInsight"):
-        st.image("assets/pharmainsight1.png", caption="Dashboard accueil", use_column_width=True)
-        st.image("assets/pharmainsight2.png", caption="Graphiques ventes", use_column_width=True)
+        st.image("assets/bi/2.png", caption="Dashboard accueil", use_column_width=True)
+        st.image("assets/bi/3.png", caption="Graphiques ventes", use_column_width=True)
+        st.image("assets/bi/4.png", caption="Graphiques ventes", use_column_width=True)
+        st.image("assets/bi/5.png", caption="Graphiques ventes", use_column_width=True)
+        st.image("assets/bi/6.png", caption="Graphiques ventes", use_column_width=True)
+        st.image("assets/bi/7.png", caption="Graphiques ventes", use_column_width=True)
 
 elif choice == "📬 Contact":
     st.header("Contact Professionnel")
-    st.write("📧 Email : ton.email@exemple.com")
-    st.write("💼 LinkedIn : [linkedin.com/in/tonprofil](https://linkedin.com)")
-    st.write("🐙 GitHub : [github.com/tonprofil](https://github.com)")
+    st.write("📧 Email : jabloun.omaima5102000@gmail.com")
+    st.write("💼 LinkedIn : [https://www.linkedin.com/in/jabloune-oumayma-b064aa355/](https://linkedin.com)")
+    st.write("🐙 GitHub : [https://github.com/jablounomaima](https://github.com)")
 
 elif choice == "📄 Télécharger mon CV":
     st.header("Télécharger mon CV")
